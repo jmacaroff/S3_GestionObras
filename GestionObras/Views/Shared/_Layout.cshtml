@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿@using static GestionObras.Helpers.NavigationIndicatorHelper;
+
+<!DOCTYPE html>
 <!--
 This is a starter template page. Use this page to start your new project from
 scratch. This page gets rid of all links and provides the needed markup only.
@@ -52,7 +54,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
                 </li>
                 <li class="nav-item d-none d-sm-inline-block">
-                    <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Inicio</a>
+                    <a class="nav-link @Url.MakeActiveClass("home", "index")" asp-area="" asp-controller="Home" asp-action="Index">Inicio</a>
                 </li>
                 <li class="nav-item d-none d-sm-inline-block">
                     <a href="#" class="nav-link">LogIn</a>
@@ -92,7 +94,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <!-- Add icons to the links using the .nav-icon class
                           with font-awesome or any other icon font library -->
                         <li class="nav-item has-treeview">
-                            <a href="#" class="nav-link">
+                            <a href="#" class="nav-link @Url.MakeActiveClass("home", "index")">
                                 <i class="nav-icon fas fa-tachometer-alt"></i>
                                 <p>
                                     Movimientos
@@ -101,7 +103,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">
+                                    <a class="nav-link @Url.MakeActiveClass("home", "index")"  asp-area="" asp-controller="Home" asp-action="Index">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Recientes</p>
                                     </a>
@@ -116,8 +118,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         </li>
 
                         <!-- Gestion de Inventario -->
-                        <li class="nav-item has-treeview menu-open">
-                            <a href="#" class="nav-link active">
+                        <li class="nav-item has-treeview"> <!-- menu-open -->
+                            <a href="#" class="nav-link  @Url.MakeActiveClass("deposito", "inventario")">
                                 <i class="nav-icon fas fa-boxes"></i>
                                 <p>
                                     Deposito
@@ -126,7 +128,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a class="nav-link active" asp-area="" asp-controller="Deposito" asp-action="Inventario">
+                                    <a class="nav-link @Url.MakeActiveClass("deposito", "inventario")" asp-area="" asp-controller="Deposito" asp-action="Inventario">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Inventario</p>
                                     </a>
@@ -287,7 +289,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- overlayScrollbars -->
     <script src="~/AdminLTE/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
 
-    @section Scripts{
+    @*@section Scripts{
         <script type="text/javascript">
             //Resolve conflict in jQuery UI tooltip with Bootstrap tooltip
             $.widget.bridge('uibutton', $.ui.button)
@@ -305,7 +307,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 })
                 $('.connectedSortable .card-header, .connectedSortable .nav-tabs-custom').css('cursor', 'move')
         </script>
-    }
+    }*@
     <!--Scripts Defeaults-->
     @*<script src="~/lib/jquery/dist/jquery.min.js"></script>
         <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>

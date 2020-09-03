@@ -5,7 +5,7 @@
 This is a starter template page. Use this page to start your new project from
 scratch. This page gets rid of all links and provides the needed markup only.
 -->
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="utf-8">
     <!-- Tell the browser to be responsive to screen width -->
@@ -66,8 +66,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
             </ul>
         </nav>
         <!-- /.navbar -->
-        <!-- Main Sidebar Container -->
 
+        <!-- Main Sidebar Container -->
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->
             <a class="brand-link" asp-area="" asp-controller="Home" asp-action="Index">
@@ -92,78 +92,34 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <nav class="mt-2">
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                         <!-- Add icons to the links using the .nav-icon class
-                          with font-awesome or any other icon font library -->
+    with font-awesome or any other icon font library -->
+
+                        <!-- Compras y Proveedores-->
                         <li class="nav-item has-treeview">
                             <a href="#" class="nav-link @Url.MakeActiveClass("home", "index")">
-                                <i class="nav-icon fas fa-tachometer-alt"></i>
+                                <i class="fas fa-cart-plus"></i>
                                 <p>
-                                    Movimientos
+                                    Compras
                                     <i class="right fas fa-angle-left"></i>
                                 </p>
                             </a>
                             <ul class="nav nav-treeview">
+                                @*<li class="nav-item">
+                     <a class="nav-link @Url.MakeActiveClass("home", "index")" asp-area="" asp-controller="Home" asp-action="Index">
+                         <i class="far fa-circle nav-icon"></i>
+                         <p>Proveedores</p>
+                     </a>
+                </li>*@
                                 <li class="nav-item">
-                                    <a class="nav-link @Url.MakeActiveClass("home", "index")"  asp-area="" asp-controller="Home" asp-action="Index">
+                                    <a class="nav-link @Url.MakeActiveClass("home", "index")" asp-area="" asp-controller="Home" asp-action="Index">
                                         <i class="far fa-circle nav-icon"></i>
-                                        <p>Recientes</p>
+                                        <p>Compras</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="#" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
-                                        <p>Mensuales</p>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-
-                        <!-- Gestion de Inventario -->
-                        <li class="nav-item has-treeview"> <!-- menu-open -->
-                            <a href="#" class="nav-link  @Url.MakeActiveClass("deposito", "inventario")">
-                                <i class="nav-icon fas fa-boxes"></i>
-                                <p>
-                                    Deposito
-                                    <i class="right fas fa-angle-left"></i>
-                                </p>
-                            </a>
-                            <ul class="nav nav-treeview">
-                                <li class="nav-item">
-                                    <a class="nav-link @Url.MakeActiveClass("deposito", "inventario")" asp-area="" asp-controller="Deposito" asp-action="Inventario">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Inventario</p>
-                                    </a>
-                                </li>
-
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Orden Compra</p>
-                                    </a>
-                                </li>
-
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Informes</p>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-
-                        <!-- Gestion de Proveedores -->
-                        <li class="nav-item has-treeview">
-                            <a href="#" class="nav-link">
-                                <i class="nav-icon fas fa-fax"></i>
-                                <p>
-                                    Proveedores
-                                    <i class="right fas fa-angle-left"></i>
-                                </p>
-                            </a>
-                            <ul class="nav nav-treeview">
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Listado</p>
+                                        <p>Ordenes</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
@@ -173,9 +129,53 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                     </a>
                                 </li>
                             </ul>
-                        <li />
+                        </li>
 
-                        <!-- Gestion de Ventas -->
+                        <!-- Proveedores-->
+                        <li class="nav-item has-treeview">
+                            <a href="#" class="nav-link">
+                                <i class="far fa-handshake"></i>
+                                <p>
+                                    Proveedores
+                                </p>
+                            </a>
+                        </li>
+
+                        <!-- Inventarios -->
+                        <li class="nav-item has-treeview">
+                            <!-- menu-open -->
+                            <a href="#" class="nav-link  @Url.MakeActiveClass("inventarios", "productos")">
+                                <i class="nav-icon fas fa-boxes"></i>
+                                <p>
+                                    Inventarios
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a class="nav-link @Url.MakeActiveClass("inventarios", "productos")" asp-area="" asp-controller="Inventarios" asp-action="Productos">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Productos</p>
+                                    </a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Envios</p>
+                                    </a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Recepciones</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <!-- Ventas -->
                         <li class="nav-item has-treeview">
                             <a href="#" class="nav-link">
                                 <i class="nav-icon fas fa-cash-register"></i>
@@ -188,13 +188,46 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 <li class="nav-item">
                                     <a href="#" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
-                                        <p>Nueva Venta</p>
+                                        <p>Presupuesto</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="#" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
-                                        <p>Resumenes</p>
+                                        <p>Factura</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        <li />
+
+                        <!-- Clientes -->
+                        <li class="nav-item has-treeview">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fas fa-address-book"></i>
+                                <p> Clientes </p>
+                            </a>
+                        </li>
+
+                        <!-- Proyectos -->
+                        <li class="nav-item has-treeview">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fas fa-hammer"></i>
+                                <p>
+                                    Proyectos
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Proyectos</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Req.Obras</p>
                                     </a>
                                 </li>
                             </ul>

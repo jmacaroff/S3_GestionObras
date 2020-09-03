@@ -6,12 +6,12 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace GestionObras.Controllers
 {
-    public class DepositoController : Controller
+    public class InventariosController : Controller
     {
         //private readonly ApplicationDbContext _db;
         //[BindProperty]
         //public Material Material { get; set; }
-        public IActionResult Inventario()
+        public IActionResult Productos()
         {
             return View();
         }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -10,9 +11,15 @@ namespace GestionObras.Models
     {
         [Key]
         public int Id { get; set; }
-        [Required]
+
+        [Required(ErrorMessage = "Este campo es requerido")]
+        [RegularExpression("^[a-zA-Z ]+$", ErrorMessage = "Solo se permiten Letras")]
         public string Descripcion { get; set; }
-        public double Precio { get; set; }
+
+        [Required (ErrorMessage = "Se requiere un precio")]
+        [Column(TypeName = "decimal(18,2)")]
+        public decimal Precio { get; set; }
+
         public string Observacion { get; set; }
 
     }

@@ -1,12 +1,11 @@
 ﻿@model GestionObras.Models.Productos
-
 @*https://www.youtube.com/watch?v=C5cnZ-gZy2I --> min- 3:04:00*@
 @*<h2 class="text-info">@()</h2>*@
 <br />
 
 <h2 class="text-info">@(Model.Id!= 0 ? "Editar":"Crear") Producto </h2>
 <br />
-<div class="border container" style="padding:30px;" >
+<div class="border container" style="padding:30px;">
     <form method="post" asp-action="UpsertProductos">
         @if (Model.Id != 0)
         {
@@ -21,6 +20,7 @@
             </div>
             <div class="col-6">
                 <input asp-for="Descripcion" class="form-control-feedback" />
+                <br />
                 <span asp-validation-for="Descripcion" class="text-danger"></span>
             </div>
         </div>
@@ -32,6 +32,7 @@
             </div>
             <div class="col-6">
                 <input asp-for="Precio" class="form-control-feedback" />
+                <br />
                 <span asp-validation-for="Precio" class="text-danger"></span>
             </div>
         </div>
@@ -43,6 +44,7 @@
             </div>
             <div class="col-6">
                 <input asp-for="Observacion" class="form-control-feedback" />
+                <br />
                 <span asp-validation-for="Observacion" class="text-danger"></span>
             </div>
         </div>
@@ -62,8 +64,23 @@
     </form>
 </div>
 
-@section Scripts{ 
+@section Scripts{
     <partial name="_ValidationScriptsPartial" />
+
+    @*El siguiente script soluciona el conflicto al ingresar decimal*@
+
+    <script src="@Url.Content("~/Scripts/jquery.globalize/globalize.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/jquery.globalize/cultures/globalize.culture.es-Es.js")" type="text/javascript"></script>
+    <script type="text/javascript">
+
+        $.validator.methods.number = function (value, element) {
+            return !isNaN(Globalize.parseFloat(value));
+        }
+
+        $(document).ready(function () {
+            Globalize.culture('en');
+        });
+    </script>
 }
 
 

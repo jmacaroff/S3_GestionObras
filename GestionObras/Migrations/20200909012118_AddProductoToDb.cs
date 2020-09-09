@@ -2,7 +2,7 @@
 
 namespace GestionObras.Migrations
 {
-    public partial class AddProductosToDb : Migration
+    public partial class AddProductoToDb : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -13,7 +13,7 @@ namespace GestionObras.Migrations
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Descripcion = table.Column<string>(nullable: false),
-                    Precio = table.Column<double>(nullable: false),
+                    Precio = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     Observacion = table.Column<string>(nullable: true)
                 },
                 constraints: table =>

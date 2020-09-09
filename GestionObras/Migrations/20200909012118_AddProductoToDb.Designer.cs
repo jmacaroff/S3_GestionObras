@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GestionObras.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20200904204002_AddProductosToDb")]
-    partial class AddProductosToDb
+    [Migration("20200909012118_AddProductoToDb")]
+    partial class AddProductoToDb
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -34,8 +34,8 @@ namespace GestionObras.Migrations
                     b.Property<string>("Observacion")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<double>("Precio")
-                        .HasColumnType("float");
+                    b.Property<decimal>("Precio")
+                        .HasColumnType("decimal(18,2)");
 
                     b.HasKey("Id");
 

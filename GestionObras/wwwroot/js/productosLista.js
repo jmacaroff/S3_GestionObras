@@ -36,7 +36,8 @@ function loadDataTable() {
             }
         ],
         "language": {
-            "emptyTable": "No hay datos"
+            "emptyTable": "No hay datos",
+            "url": "https://cdn.datatables.net/plug-ins/1.10.21/i18n/Spanish.json"
         },
         "width": "100%"
     });

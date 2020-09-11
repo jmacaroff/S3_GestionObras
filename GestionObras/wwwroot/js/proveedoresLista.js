@@ -6,29 +6,32 @@ $(document).ready(function () {
 });
 
 function loadDataTable() {
-    dataTable = $('#DT_loadProductos').DataTable({
+    dataTable = $('#DT_loadProveedores').DataTable({
         "responsive": true,
         "autoWidth": false,
         "ajax": {
-            "url": "/inventarios/getallproductos/",
+            "url": "/proveedores/getallproveedores/",
             "type": "GET",
             "datatype": "json"
         },
         "columns": [
-            { "data": "descripcion", },
-            { "data": "precio" , },
-            { "data": "observacion",},
+            { "data": "razonSocial", },
+            { "data": "nrcuit", },
+            { "data": "nrcbu", },
+            { "data": "direccion", },
+            { "data": "telefono", },
+            { "data": "email", },
             {
                 "data": "id",
                 "render": function (data) {
                     return `<div class="text-center"> 
                         <!--Editar-->
-                        <a href="/inventarios/UpsertProductos?id=${data}" class='btn btn-success text-white' style='cursor:pointer; width:70px;'>
+                        <a href="/proveedores/UpsertProveedores?id=${data}" class='btn btn-success text-white' style='cursor:pointer; width:70px;'>
                             <i class="far fa-edit"></i>                         
                         </a>
                         <!--Eliminar-->
                         <a class='btn btn-danger text-white' style='cursor:pointer; width:70px;'
-                            onclick=Delete('/inventarios/Delete_Productos?id='+${data})>
+                            onclick=Delete('/proveedores/Delete_proveedores?id='+${data})>
                             <i class="fas fa-trash-alt"></i>
                         </a>
                         </div>`;

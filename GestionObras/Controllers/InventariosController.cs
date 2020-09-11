@@ -29,6 +29,7 @@ namespace GestionObras.Controllers
             return View();
         }
 
+        //Muestra la View UpsertProductos
         public IActionResult UpsertProductos(int? id)
         {
             productos = new Productos();
@@ -53,7 +54,7 @@ namespace GestionObras.Controllers
         {
             if(ModelState.IsValid)
             {
-                if(productos.Id== 0)
+                if(productos.Id == 0)
                 {
                     //create
                     _db.Productos.Add(productos);
@@ -81,11 +82,11 @@ namespace GestionObras.Controllers
             var productFromDb = await _db.Productos.FirstOrDefaultAsync(u => u.Id == id);
             if (productFromDb == null)
             {
-                return Json(new { success = false, message = "Error while Deleting" });
+                return Json(new { success = false, message = "Error al Eliminar" });
             }
             _db.Productos.Remove(productFromDb);
             await _db.SaveChangesAsync();
-            return Json(new { success = true, message = "Delete successful" });
+            return Json(new { success = true, message = "Eliminado Correctamente" });
         }
 
         #endregion

@@ -3,14 +3,16 @@ using GestionObras.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GestionObras.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20200911135228_AddClientesToDB")]
+    partial class AddClientesToDB
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -66,43 +68,6 @@ namespace GestionObras.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Productos");
-                });
-
-            modelBuilder.Entity("GestionObras.Models.Proveedores", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Direccion")
-                        .HasColumnType("varchar(100)")
-                        .HasMaxLength(100);
-
-                    b.Property<string>("Email")
-                        .HasColumnType("varchar(50)");
-
-                    b.Property<string>("NRCBU")
-                        .IsRequired()
-                        .HasColumnType("nchar(22)")
-                        .HasMaxLength(22);
-
-                    b.Property<string>("NRCUIT")
-                        .IsRequired()
-                        .HasColumnType("nchar(11)")
-                        .HasMaxLength(11);
-
-                    b.Property<string>("RazonSocial")
-                        .IsRequired()
-                        .HasColumnType("varchar(100)");
-
-                    b.Property<string>("Telefono")
-                        .HasColumnType("nchar(20)")
-                        .HasMaxLength(20);
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Proveedores");
                 });
 #pragma warning restore 612, 618
         }

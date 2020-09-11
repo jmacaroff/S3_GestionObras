@@ -1,6 +1,5 @@
 ﻿@model GestionObras.Models.Productos
-@*https://www.youtube.com/watch?v=C5cnZ-gZy2I --> min- 3:04:00*@
-@*<h2 class="text-info">@()</h2>*@
+
 <br />
 
 <h2 class="text-info">@(Model.Id!= 0 ? "Editar":"Crear") Producto </h2>
@@ -52,9 +51,19 @@
         <!--  -->
         <div class="form-group row">
             <div class="col-3 offset-3">
-                <button type="submit" class="btn btn-primary form-control">
-                    @(Model.Id!= 0 ? "Actualizar":"Crear")
-                </button>
+                @if (Model.Id != 0)
+                {
+                    <button type="submit" id="ActualizarProducto" class="btn btn-primary form-control">Actualizar</button>
+                }
+                else
+                {
+                    <button type="submit" id="CrearProducto" class="btn btn-primary form-control">Crear</button>
+
+                }
+
+                <!--<button type="submit" class="btn btn-primary form-control">-->
+                @*@(Model.Id!= 0 ? "Actualizar":"Crear")*@
+                <!--</button>-->
             </div>
             <div class="col-3">
                 <a asp-action="Productos" asp-controller="Inventarios" class="btn btn-success form-control">Regresar a Productos</a>
@@ -67,10 +76,10 @@
 @section Scripts{
     <partial name="_ValidationScriptsPartial" />
 
-    @*El siguiente script soluciona el conflicto al ingresar decimal*@
+    @*El siguiente script soluciona el conflicto al ingresar decimal, El mismo tambien se puede solucionar cambiando el simbolo decimal en la region del SO*@
 
-    <script src="@Url.Content("~/Scripts/jquery.globalize/globalize.js")" type="text/javascript"></script>
-    <script src="@Url.Content("~/Scripts/jquery.globalize/cultures/globalize.culture.es-Es.js")" type="text/javascript"></script>
+    @*<script src="@Url.Content("~/Scripts/jquery.globalize/globalize.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/jquery.globalize/cultures/globalize.culture.en-En.js")" type="text/javascript"></script>
     <script type="text/javascript">
 
         $.validator.methods.number = function (value, element) {
@@ -78,9 +87,10 @@
         }
 
         $(document).ready(function () {
-            Globalize.culture('en');
+            Globalize.culture('en')
         });
-    </script>
+
+    </script>*@
 }
 
 

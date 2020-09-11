@@ -120,7 +120,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
                         <!-- Proveedores-->
                         <li class="nav-item has-treeview">
-                            <a href="#" class="nav-link">
+                            <a class="nav-link  @Url.MakeActiveClass("proveedores", "proveedores")" asp-area="" asp-controller="Proveedores" asp-action="Proveedores">
                                 <i class="far fa-handshake"></i>
                                 <p>
                                     Proveedores
@@ -189,7 +189,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
                         <!-- Clientes -->
                         <li class="nav-item has-treeview">
-                            <a href="#" class="nav-link">
+                            <a class="nav-link @Url.MakeActiveClass("clientes", "clientes")" asp-area="" asp-controller="Clientes" asp-action="Clientes">
                                 <i class="nav-icon fas fa-address-book"></i>
                                 <p> Clientes </p>
                             </a>

@@ -17,6 +17,7 @@ namespace GestionObras.Models
         public string Descripcion { get; set; }
 
         [Required (ErrorMessage = "Se requiere un precio")]
+        [RegularExpression(@"^\d+\.\d{2}$", ErrorMessage = "Se aceptan 2 decimales. Ingrese el valor decimal con ' . '")]
         [Column(TypeName = "decimal(18,2)")]
         public decimal Precio { get; set; }
 

@@ -18,14 +18,19 @@ namespace GestionObras.Models
         [Column(TypeName = "nchar(11)")]
         public string NRCUIT{ get; set; }
 
+        [Required(ErrorMessage = "Este campo es requerido")]
+        [StringLength(100, ErrorMessage = "Solo se aceptan 100 digitos maximo")]
+        [Column(TypeName = "varchar(100)")]
+        public string Nombre { get; set; }
+
 
         [StringLength(100, ErrorMessage = "Solo se aceptan 100 digitos")]
         [Column(TypeName = "varchar(100)")]
         public string Direccion { get; set; }
 
         [StringLength(20, ErrorMessage = "Solo se aceptan 20 digitos")]
-        [RegularExpression(@"^\d{20}$", ErrorMessage = "Solo se aceptan 20 digitos")]
-        [Column(TypeName = "nchar(20)")]
+        [RegularExpression(@"^\d+", ErrorMessage = "Solo se aceptan numeros")]
+        [Column(TypeName = "nvarchar(20)")]
         public string Telefono { get; set; }
 
 

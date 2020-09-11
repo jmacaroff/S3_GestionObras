@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GestionObras.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20200911144504_AddProveedoresToDb")]
-    partial class AddProveedoresToDb
+    [Migration("20200911160621_AddProductosClientesProveedoresToDb")]
+    partial class AddProductosClientesProveedoresToDb
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -39,8 +39,13 @@ namespace GestionObras.Migrations
                         .HasColumnType("nchar(11)")
                         .HasMaxLength(11);
 
+                    b.Property<string>("Nombre")
+                        .IsRequired()
+                        .HasColumnType("varchar(100)")
+                        .HasMaxLength(100);
+
                     b.Property<string>("Telefono")
-                        .HasColumnType("nchar(20)")
+                        .HasColumnType("nvarchar(20)")
                         .HasMaxLength(20);
 
                     b.HasKey("Id");
@@ -99,7 +104,7 @@ namespace GestionObras.Migrations
                         .HasColumnType("varchar(100)");
 
                     b.Property<string>("Telefono")
-                        .HasColumnType("nchar(20)")
+                        .HasColumnType("nvarchar(20)")
                         .HasMaxLength(20);
 
                     b.HasKey("Id");

@@ -37,8 +37,13 @@ namespace GestionObras.Migrations
                         .HasColumnType("nchar(11)")
                         .HasMaxLength(11);
 
+                    b.Property<string>("Nombre")
+                        .IsRequired()
+                        .HasColumnType("varchar(100)")
+                        .HasMaxLength(100);
+
                     b.Property<string>("Telefono")
-                        .HasColumnType("nchar(20)")
+                        .HasColumnType("nvarchar(20)")
                         .HasMaxLength(20);
 
                     b.HasKey("Id");
@@ -97,7 +102,7 @@ namespace GestionObras.Migrations
                         .HasColumnType("varchar(100)");
 
                     b.Property<string>("Telefono")
-                        .HasColumnType("nchar(20)")
+                        .HasColumnType("nvarchar(20)")
                         .HasMaxLength(20);
 
                     b.HasKey("Id");

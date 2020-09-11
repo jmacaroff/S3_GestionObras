@@ -12,6 +12,18 @@
         }
         <div class="text-danger" asp-validation-summary="ModelOnly"></div>
 
+        <!-- Nombre -->
+        <div class="form-group row">
+            <div class="col-3">
+                <label asp-for="Nombre"></label>
+            </div>
+            <div class="col-6">
+                <input asp-for="Nombre" class="form-control-feedback" />
+                <br />
+                <span asp-validation-for="Nombre" class="text-danger"></span>
+            </div>
+        </div>
+
         <!-- NRCUIT -->
         <div class="form-group row">
             <div class="col-3">

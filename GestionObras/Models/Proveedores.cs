@@ -35,7 +35,7 @@ namespace GestionObras.Models
 
         [StringLength(20, ErrorMessage = "Solo se aceptan 20 digitos")]
         [RegularExpression(@"^\d+", ErrorMessage = "Solo se aceptan numeros")]
-        [Column(TypeName = "nchar(20)")]
+        [Column(TypeName = "nvarchar(20)")]
         public string Telefono { get; set; }
 
 

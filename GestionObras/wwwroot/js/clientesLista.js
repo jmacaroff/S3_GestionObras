@@ -15,6 +15,7 @@ function loadDataTable() {
             "datatype": "json"
         },
         "columns": [
+            { "data": "nombre", },
             { "data": "nrcuit", },
             { "data": "direccion", },
             { "data": "telefono", },
